@@ -1,0 +1,216 @@
+ru:
+  auto_estimate_confirm:      Выполнить автоматизированное назначение ЭО для всех задач?
+  auto_estimate_done:         Оценки назначены для %{value} задач
+  availability:               Доступность
+  availability_man_hour:      Доступность в чел/ч
+  availability_non_incident:  Без учета инциндетов и опер_надежности
+  availability_system_min:    Доступность по системе (min)
+  availability_system_max:    Доступность по системе (max)
+  availability_calculated:    Расчетная доступность в чел/ч
+  available_resource:         Располагаемый объем ресурса (чел-часы)
+  available_resource_min:     Располагаемый объем ресурса (чел-часы)(min)
+  available_resource_max:     Располагаемый объем ресурса (чел-часы)(max)
+  add_system:                 Добавить систему
+  additional_resource:        Количество дополнительных человек, локализующих дефицит
+  analytics:                  Аналитика
+  analyst_plural:             Аналитики
+
+  beta_test:  Опытная эксплуатация
+
+  competence_value_edited:      Значение эффективности успешно изменено
+  competence_value_deleted:     Значение эффективности успешно удалено
+  competence_graphs:            Графики увеличения экспертизы сотрудника
+  competence_sheet:             Экспертиза сотрудника
+  competence_month:             Месяц работы
+  competence_value:             Эффективность ознакомления
+
+  deficit:                Дефицит
+  detail_auto_estimated:  (рассчитан автоматизированно)
+  developer_plural:       Разработчики
+
+  edit_competence_value:  Редактирование значения эффективности
+  export_report:          Отчёт
+  export_internal_staff:  Внутренний сотрудник
+  export_out_staff:       Аутстафф
+  export_date:            Дата
+  export_is_short:        ИС
+  export_rm_id:           RM ID
+  export_description:     Описание
+  export_working_hours:   Трудозатраты, ч
+  export_executive:       Исполнитель
+  export_company_type:    I/O
+  export_ot_id:           OT ID
+  export_status:          Статус
+  export_work_effort:     Трудозатраты, ч
+  export_department:      Департамент
+  export_position:        Должность
+  export_activity:        Вид деятельности
+  export_rate:            Ставка
+  export_period_from:     Период с
+  export_till:            по
+
+  error_system_knoledge_exists: Система %{sys} уже существует
+
+  field_for_dev_estimation:     Требуется оценка разработчика
+  field_for_tester_estimation:  Требуется оценка тестировщика
+  flag_dev_estimation_field:    Требуется оценка разработчика
+  flag_tester_estimation_field: Требуется оценка тестировщика
+  field_month:                  Месяц
+  field_system:                 Система
+  field_date_admission:         Дата приема
+  field_date_dismissal:         Дата увольнения
+  field_date_privilege_end:     Дата окончания льгот. периода
+  field_fio:                    ФИО
+  field_department:             Департамент
+  field_administration:         Управление
+  field_section:                Отдел
+  field_appointment:            Должность
+  field_curator:                Куратор (ФИО)
+  field_rework_availability:    Доступность (доработки к ПA)
+  field_category:               Категория
+  field_system_knowledge:       Знание системы
+  field_company:                Компания
+  field_companies:              Компании
+  field_releases:               Релизы
+  field_resource_categories:    Категории ресурсов
+  field_release_start:          'rls: AN'
+  familiarization:              Ознакомление
+  field_work_days_analytics:    Кол-во р.дней AN
+  field_work_days_dev:          Кол-во р.дней DEV
+  field_work_days_test:         Кол-во р.дней TEST
+  field_work_days_btest:        Кол-во р.дней ОЭ
+  field_rdp:                    RDP
+
+  forecast_perfomance_applications: 'Отчет "Прогноз исполнения заявок"'
+
+  holiday_days_number:  Кол-во отпускных дней
+
+  label_system:     Система
+  label_competence: Эффективность ознакомления
+
+  named_system_knowledge:     Знание системы %{sys}
+  new_competence_value_added: Новое значение эффективности успешно добавлено
+  new_competence_value:       Новое значение эффективности
+
+  permission_view_resource_reports:     Просмотр списка отчетов
+  permission_performance_rate_report:   Выгрузка отчёта о трудозатратах
+  permission_rework_resources_report:   Выгрузка отчёта "Ресурсы НРД на доработку ПО"
+  permission_release_calendar_report:   Выгрузка отчёта "Календарь релизов"
+  permission_resource_provision_report: Выгрузка отчёта "Обеспеченность ИТ ресурсами"
+  possible_value:                       Возможное значение
+  period:                               Период
+
+  resource_reports:               Отчётность для планирования
+  resource_report_working_hours:  Oтчёт о трудозатратах на устранение рискованных инцидентов 3-й линией поддержки
+  resource_internal_company:      НРД
+  resource_externall_company:     Outsource
+  rework_resources_report:        Отчет "Ресурсы НРД на доработку ПО"
+  report_start_date:              С
+  report_end_date:                По
+  report_date:                    Дата
+  report_generate:                Генерировать отчёт
+  report_totals:                  Итог
+  release_calendar:               Календарь релизов
+  release_calendar_report:        Отчёт "Календарь релизов"
+  resource_provision_report:      Отчёт "Обеспеченность ИТ ресурсами"
+  release_number:                 № Релиза
+  release_stage:                  Стадия релиза (аналитика, разработка, тестирование)
+  release_system:                 Код подкатегории ресурса (система)
+  required_resource:              Требуемый объем ресурса (чел-часы)
+  resource_deficit:               Дефицит ИТ ресурсов (чел-часы)
+  report_composition_date:        Дата составления
+  release_stats_report:           Отчёт "Показатели релиза"
+  release_stats_ins:              Установленный релиз
+  release_stats_dev:              Релизы в работе
+  release_stats_rls_no:           Номер релиза
+  release_stats_inc_capacity:     Инцидентоёмкость релиза
+  release_stats_undefined:        Не определено
+  release_stats_ins_latency:      Своевременность установки
+  release_stats_anlz_latency:     Своевременность завершения аналитики
+  release_stats_dev_latency:      Своевременность завершения разработки
+  release_stats_anlz_schedule:    Соблюдение графика аналитики релиза
+  release_stats_dev_schedule:     Соблюдение графика разработки релиза
+  release_stats_test_schedule:    Соблюдение графика тестирования релиза
+  release_stats_anlz:             Аналитика
+  release_stats_dev:              Разработка
+  release_stats_test:             Тестирование
+
+
+  software_development:                   Разработка ПО
+  software_list:                          Перечень ПО
+  settings_omnitracker_date_field:        Дата заведения инцидента в OmniTracker
+  settings_risk_field:                    Информация о рискованности инцидента
+  settings_internal_company_settings:     Настройки внтуренней компании
+  settings_internal_company:              Внутренняя компания
+  settings_issue_tracker:                 Тип задачи
+  settings_resources:                     Ресурсы
+  settings_resource_assigned_field:       Исполнитель
+  settings_resource_tracker:              Трекер
+  settings_working_hours_estimation:      Экспертная оценка трудозатрат
+  settings_estimation_fields:             Поля экспертных оценок
+  settings_e_analytics_field:             Экспертная оценка аналитика
+  settings_e_dev_field:                   Экспертная оценка разработчика
+  settings_e_testing_field:               Экспертная оценка тестировщика
+  settings_subtasks_trackers:             Трекеры подзадач
+  settings_analytics:                     Аналитика
+  settings_development:                   Разработка
+  settings_testing:                       Тестирование
+  settings_req_analyst_resource:          Требует ресурсов аналитика
+  settings_req_dev_resource:              Требует ресурсов разработчика
+  settings_req_tester_resource:           Требует ресурсов тестировщика
+  settings_req_dev_estimation:            Требует оценки разработчика
+  settings_req_tester_estimation:         Требует оценки тестировщика
+  settings_select_statuses:               Выберите статутсы
+  settings_button_select:                 Выбрать
+  settings_flags:                         Флаги
+  settings_estimation_tracker:            Трекер задач для авто оценки
+  settings_auto_estimate_all:             Авто ЭО всех заявок
+  settings_release_tracker:               Трекер релиза
+  settings_resource_category_field:       Поле "Категория" ресурса
+  settings_resource_fio_field:            Поле "ФИО" ресурса
+  settings_date_admission_field:          Поле "Дата приема" ресурса
+  settings_date_dismissal_field:          Поле "Дата увольнения" ресурса
+  settings_release_start_field:           Поле даты начала релиза
+  settings_release_closed_status:         Статус завершенного релиза
+  settings_resource_quantum_tracker:      Трекер кванта ресурса
+  settings_quantum_type_holiday:          Тип кванта Отпуск
+  settings_quantum_type_work:             Тип доступного кванта ресурса
+  settings_rework_availability_field:     Поле "Доступность (доработки к ПA)" ресурса
+  settings_resource_value:                Поле "Объем ресурса"
+  settings_work_days_analytics_field:     Поле кол-ва рабочих дней аналитики
+  settings_work_days_dev_field:           Поле кол-ва рабочих дней разработки
+  settings_work_days_test_field:          Поле кол-ва рабочих дней тестирования
+  settings_work_days_btest_field:         Поле кол-ва рабочих дней ОЭ
+  settings_category_analytics:            Категория Аналитика
+  settings_category_dev:                  Категория Разработка
+  settings_category_test:                 Категория Тестирование
+  settings_release_analytics_start_field: Поле начала Аналитики
+  settings_release_test_start_field:      Поле начала Тестирования
+  settings_release_dev_start_field:       Поле начала Разработки
+  settings_release_btest_start_field:     Поле начала ОЭ
+  settings_release_prod_start_field:      Поле установки в ПРОМ
+  settings_release_negotiation_field:     Поле "Согласование релиза"
+  settings_rework_tracker:                Трекер доработки ПО
+  settings_system_field:                  Поле "Система"
+  settings_company_fields:                Принадлежность сотрудника
+  settings_ot_id_field:                   Номер инцидента
+  settings_resource_department_field:     Департамент
+  settings_resource_position_field:       Должность
+  settings_resource_activity_field:       Деятельность (ресурсы)
+
+  settings_rls_status_dev:                Статус релиза в разработке
+  settings_rls_status_test:               Статус релиза в тестировании
+  settings_rls_status_installed:          Статус установленного релиза
+  settings_default_anlz_length:           Длительность этапа аналитики по умолчанию, дн.
+  settings_anlz_complete_status:          Статус завершения аналитики
+  settings_dev_complete_status:           Статус завершения разработки
+  settings_test_complete_status:          Статус завершения тестирования
+  settings_incident:                      Инцидент
+  settings_inc_priority_ids:              Статусы срочных инцидентов
+  settings_rdp_field:                     Поле RDP
+
+  testing:        Тестирование
+  tester_plural:  Тестировщики
+  total:          Всего
+
+  working_days_number:  Кол-во рабочих дней

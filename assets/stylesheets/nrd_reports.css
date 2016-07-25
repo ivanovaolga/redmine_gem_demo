@@ -1,0 +1,67 @@
+.report-date-filter {
+  display: inline;
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#statuses-modal label {
+  float: left;
+  margin-bottom: 2px;
+  width: 50%;
+}
+
+.statuses-modal-button {
+  float: left;
+  margin: 20px 20px 0 0;
+}
+
+.edit-estimation-statuses {
+  margin-left: 10px;
+}
+
+.estimation-help {
+  margin-left: 5px;
+}
+
+.settings-actions {
+  display: inline;
+}
+
+.settings-actions a {
+  margin-left: 15px;
+}
+
+table.competences-list {
+  min-width: 50%;
+  width: auto;
+}
+
+.system-knowledge-bottom {
+  border-bottom: 1px dotted #bbb;
+  margin-top: 10px;
+}
+
+label.system-knowledge-label {
+  float: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.system-knowledge-value {
+  width: 40px;
+}
+
+.delete-knowledge {
+  margin-left: 15px;
+}
+
+.report-form select {
+  min-width: 200px;
+}
+
+.report-form-button {
+  margin-right: 10px;
+}

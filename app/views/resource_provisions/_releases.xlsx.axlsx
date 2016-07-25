@@ -1,0 +1,34 @@
+header_row = wb.styles.add_style(header_style)
+minor_header_row = wb.styles.add_style(minor_header_style)
+data_row = wb.styles.add_style(data_row_style)
+
+sheet.add_row([l(:report_composition_date), report_composition_date])
+
+sheet.add_row([])
+
+sheet.add_row([
+  nil, l(:analyst_plural), nil, nil, nil, l(:developer_plural), nil, nil, nil, l(:tester_plural), nil, nil, nil
+], style: header_row)
+
+sheet.add_row([
+  l(:release_number), l(:available_resource), l(:required_resource), l(:resource_deficit), l(:additional_resource),
+  l(:available_resource), l(:required_resource), l(:resource_deficit), l(:additional_resource),
+  l(:available_resource), l(:required_resource), l(:resource_deficit), l(:additional_resource)
+], style: minor_header_row, widths: [:auto] + [12] * 12)
+
+%w(B3:E3 F3:I3 J3:M3).each { |range| sheet.merge_cells(range) }
+
+@releases.each do |rls|
+  row = @releases_report.rows[rls.id]
+  next unless row
+
+  sheet.add_row([
+    rls.name,
+    *[:an, :dev, :test].map { |t| [
+      row[t][:available],
+      row[t][:required],
+      row[t][:deficit],
+      row[t][:additional].round(2)
+    ] }.flatten
+  ], style: data_row)
+end

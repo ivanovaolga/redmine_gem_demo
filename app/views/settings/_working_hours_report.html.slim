@@ -1,0 +1,49 @@
+fieldset
+  legend = l(:resource_report_working_hours)
+  p
+    = label_tag 'settings[omnitracker_date_field]', l(:settings_omnitracker_date_field)
+    = select_tag 'settings[omnitracker_date_field]', \
+                 options_for_select(custom_fields_options(:date), @settings[:omnitracker_date_field])
+
+  p
+    = label_tag 'settings[system_field]', l(:settings_system_field)
+    = select_tag 'settings[system_field]', options_for_select(custom_fields_options, @settings[:system_field])
+
+  p
+    = label_tag 'settings[risk_field]', l(:settings_risk_field)
+    = select_tag 'settings[risk_field]', options_for_select(custom_fields_options(:bool), @settings[:risk_field])
+
+  p
+    = label_tag 'settings[issue_tracker]', l(:settings_issue_tracker)
+    = select_tag 'settings[issue_tracker]', options_for_select(tracker_options, @settings[:issue_tracker])
+
+  p
+    = label_tag 'settings[ot_id_field]', l(:settings_ot_id_field)
+    = select_tag 'settings[ot_id_field]', options_for_select(custom_fields_options, @settings[:ot_id_field])
+
+  fieldset
+    legend = l(:settings_company_fields)
+    p
+      = hidden_field_tag 'settings[company_field]', @settings[:company_field]
+      = label_tag 'settings[internal_company]', l(:settings_internal_company)
+      = company_custom_field('settings[internal_company]', @settings[:internal_company])
+
+    p
+      = label_tag 'settings[resource_tracker]', l(:settings_resource_tracker)
+      = select_tag 'settings[resource_tracker]', options_for_select(tracker_options, @settings[:resource_tracker])
+
+    p
+      = label_tag 'settings[resource_assigned_field]', l(:settings_resource_assigned_field)
+      = select_tag 'settings[resource_assigned_field]', options_for_select(custom_fields_options(:user), @settings[:resource_assigned_field])
+
+    p
+      = label_tag 'settings[resource_department_field]', l(:settings_resource_department_field)
+      = select_tag 'settings[resource_department_field]', options_for_select(custom_fields_options, @settings[:resource_department_field])
+
+    p
+      = label_tag 'settings[resource_position_field]', l(:settings_resource_position_field)
+      = select_tag 'settings[resource_position_field]', options_for_select(custom_fields_options, @settings[:resource_position_field])
+
+    p
+      = label_tag 'settings[resource_activity_field]', l(:settings_resource_activity_field)
+      = select_tag 'settings[resource_activity_field]', options_for_select(custom_fields_options, @settings[:resource_activity_field])

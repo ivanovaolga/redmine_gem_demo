@@ -1,0 +1,5 @@
+= title [l(:competence_graphs), competences_system_path], l(:edit_competence_value)
+
+= labelled_form_for @competence do |f|
+  = render partial: 'form', locals: { f: f }
+  = f.submit l(:button_save)

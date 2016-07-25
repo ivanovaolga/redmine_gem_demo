@@ -1,0 +1,101 @@
+fieldset
+  legend = l(:release_stats_report)
+
+  p
+    = label_tag 'settings[rls_stats_inc_priority_ids]', l(:settings_inc_priority_ids)
+    = select_tag 'settings[rls_stats_inc_priority_ids]', \
+                 options_for_select(priority_options, @settings[:rls_stats_inc_priority_ids]), multiple: true
+
+  p
+    = label_tag 'settings[rls_stats_status_dev]', l(:settings_rls_status_dev)
+    = select_tag 'settings[rls_stats_status_dev]', \
+                 options_for_select(status_options, @settings[:rls_stats_status_dev])
+
+  p
+    = label_tag 'settings[rls_stats_status_test]', l(:settings_rls_status_test)
+    = select_tag 'settings[rls_stats_status_test]', \
+                 options_for_select(status_options, @settings[:rls_stats_status_test])
+
+  p
+    = label_tag 'settings[rls_stats_status_installed]', l(:settings_rls_status_installed)
+    = select_tag 'settings[rls_stats_status_installed]', \
+                 options_for_select(status_options, @settings[:rls_stats_status_installed])
+
+  p
+    = label_tag 'settings[rls_stats_default_anlz_length]', l(:settings_default_anlz_length)
+    = number_field_tag 'settings[rls_stats_default_anlz_length]', @settings[:rls_stats_default_anlz_length]
+
+  p
+    = label_tag 'settings[rls_stats_anlz_start_field]', l(:settings_release_analytics_start_field)
+    = select_tag 'settings[rls_stats_anlz_start_field]', \
+                 options_for_select(custom_fields_options(:date), @settings[:rls_stats_anlz_start_field])
+
+  p
+    = label_tag 'settings[rls_stats_dev_start_field]', l(:settings_release_dev_start_field)
+    = select_tag 'settings[rls_stats_dev_start_field]', \
+                 options_for_select(custom_fields_options(:date), @settings[:rls_stats_dev_start_field])
+
+  p
+    = label_tag 'settings[rls_stats_test_start_field]', l(:settings_release_test_start_field)
+    = select_tag 'settings[rls_stats_test_start_field]', \
+                 options_for_select(custom_fields_options(:date), @settings[:rls_stats_test_start_field])
+
+  p
+    = label_tag 'settings[rls_stats_prod_start_field]', l(:settings_release_prod_start_field)
+    = select_tag 'settings[rls_stats_prod_start_field]', \
+                 options_for_select(custom_fields_options(:date), @settings[:rls_stats_prod_start_field])
+
+  p
+    = label_tag 'settings[rls_stats_anlz_tracker]', l(:settings_analytics)
+    = select_tag 'settings[rls_stats_anlz_tracker]', \
+                 options_for_select(tracker_options, @settings[:rls_stats_anlz_tracker])
+
+  p
+    = label_tag 'settings[rls_stats_dev_tracker]', l(:settings_development)
+    = select_tag 'settings[rls_stats_dev_tracker]', \
+                 options_for_select(tracker_options, @settings[:rls_stats_dev_tracker])
+
+  p
+    = label_tag 'settings[rls_stats_test_tracker]', l(:settings_testing)
+    = select_tag 'settings[rls_stats_test_tracker]', \
+                 options_for_select(tracker_options, @settings[:rls_stats_test_tracker])
+
+  p
+    = label_tag 'settings[rls_stats_incident_tracker]', l(:settings_incident)
+    = select_tag 'settings[rls_stats_incident_tracker]', \
+                 options_for_select(tracker_options, @settings[:rls_stats_incident_tracker])
+
+  p
+    = label_tag 'settings[rls_stats_anlz_complete_status]', l(:settings_anlz_complete_status)
+    = select_tag 'settings[rls_stats_anlz_complete_status]', \
+                 options_for_select(status_options, @settings[:rls_stats_anlz_complete_status])
+
+  p
+    = label_tag 'settings[rls_stats_dev_complete_status]', l(:settings_dev_complete_status)
+    = select_tag 'settings[rls_stats_dev_complete_status]', \
+                 options_for_select(status_options, @settings[:rls_stats_dev_complete_status])
+
+  p
+    = label_tag 'settings[rls_stats_test_complete_status]', l(:settings_test_complete_status)
+    = select_tag 'settings[rls_stats_test_complete_status]', \
+                 options_for_select(status_options, @settings[:rls_stats_test_complete_status])
+
+  p
+    = label_tag 'settings[rls_stats_e_anlz_field]', l(:settings_e_analytics_field)
+    = select_tag 'settings[rls_stats_e_anlz_field]', \
+                 options_for_select(custom_fields_options(:float), @settings[:rls_stats_e_anlz_field])
+
+  p
+    = label_tag 'settings[rls_stats_e_dev_field]', l(:settings_e_dev_field)
+    = select_tag 'settings[rls_stats_e_dev_field]', \
+                 options_for_select(custom_fields_options(:float), @settings[:rls_stats_e_dev_field])
+
+  p
+    = label_tag 'settings[rls_stats_e_test_field]', l(:settings_e_testing_field)
+    = select_tag 'settings[rls_stats_e_test_field]', \
+                 options_for_select(custom_fields_options(:float), @settings[:rls_stats_e_test_field])
+
+  p
+    = label_tag 'settings[rls_stats_rls_negotiation_field]', l(:settings_release_negotiation_field)
+    = select_tag 'settings[rls_stats_rls_negotiation_field]', \
+                 options_for_select(custom_fields_options, @settings[:rls_stats_rls_negotiation_field])

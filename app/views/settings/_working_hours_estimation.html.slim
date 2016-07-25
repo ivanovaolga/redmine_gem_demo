@@ -1,0 +1,63 @@
+fieldset
+  legend
+    = l(:settings_working_hours_estimation)
+    = link_to l(:label_help), '#estimation_help', class: 'icon icon-help estimation-help', title: l(:label_help)
+    .settings-actions
+      = link_to l(:settings_auto_estimate_all), auto_estimations_path, id: 'auto-estimate-all', \
+        confirm: l(:auto_estimate_confirm), remote: true, method: :post
+
+  p
+    = label_tag 'settings[estimation_tracker]', l(:settings_estimation_tracker)
+    = select_tag 'settings[estimation_tracker]', options_for_select(tracker_options, @settings[:estimation_tracker]), \
+      include_blank: true
+
+  fieldset
+    legend = l(:settings_estimation_fields)
+    p
+      = label_tag 'settings[e_analytics_field]', l(:settings_e_analytics_field)
+      = estimation_type_field('e_analytics_field')
+
+    p
+      = label_tag 'settings[e_dev_field]', l(:settings_e_dev_field)
+      = estimation_type_field('e_dev_field')
+
+    p
+      = label_tag 'settings[e_testing_field]', l(:settings_e_testing_field)
+      = estimation_type_field('e_testing_field')
+
+  fieldset
+    legend = l(:settings_subtasks_trackers)
+    p
+      = label_tag 'settings[subtask_analytics_tracker]', l(:settings_analytics)
+      = select_tag 'settings[subtask_analytics_tracker]', options_for_select(tracker_options, @settings[:subtask_analytics_tracker])
+
+    p
+      = label_tag 'settings[subtask_dev_tracker]', l(:settings_development)
+      = select_tag 'settings[subtask_dev_tracker]', options_for_select(tracker_options, @settings[:subtask_dev_tracker])
+
+  fieldset
+    legend = l(:label_issue_status_plural)
+    p
+      = label_tag 'settings[e_analytics_statuses]', l(:settings_req_analyst_resource)
+      = render_estimation_statuses('e_analytics_statuses')
+
+    p
+      = label_tag 'settings[e_dev_statuses]', l(:settings_req_dev_resource)
+      = render_estimation_statuses('e_dev_statuses')
+
+    p
+      = label_tag 'settings[e_testing_statuses]', l(:settings_req_tester_resource)
+      = render_estimation_statuses('e_testing_statuses')
+
+  fieldset
+    legend = l(:settings_flags)
+    p
+      = label_tag 'settings[req_dev_estimation_field]', l(:settings_req_dev_estimation)
+      = select_tag 'settings[req_dev_estimation_field]', options_for_select(custom_fields_options(:bool), @settings[:req_dev_estimation_field])
+
+    p
+      = label_tag 'settings[req_tester_estimation_field]', l(:settings_req_tester_estimation)
+      = select_tag 'settings[req_tester_estimation_field]', options_for_select(custom_fields_options(:bool), @settings[:req_tester_estimation_field])
+
+= render partial: 'settings/modal/issue_statuses'
+= render partial: 'settings/modal/estimation_help'

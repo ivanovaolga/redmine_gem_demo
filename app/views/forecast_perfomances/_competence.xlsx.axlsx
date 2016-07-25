@@ -1,0 +1,19 @@
+header_row = styles.add_style(header_style)
+minor_header_row = styles.add_style(minor_header_style)
+data_row = styles.add_style(centered_cell_style.merge(black_border_style))
+num_cell = styles.add_style(centered_cell_style.merge(black_border_style).merge(format_code: "0.0"))
+
+sheet.add_row([l(:competence_graphs), nil], style: header_row)
+sheet.merge_cells("A1:B1")
+
+sheet.add_row([l(:competence_month), l(:competence_value)], style: minor_header_row)
+rows.each do |system, competences|
+  row = sheet.add_row([system, nil], style: data_row)
+  sheet.merge_cells(row.cells[(0..1)])
+  competences.each do |item|
+    c_row = sheet.add_row([item.month, item.value], style: data_row)
+    c_row.cells[1].style = num_cell
+  end
+end
+
+sheet.column_widths(35, 35)

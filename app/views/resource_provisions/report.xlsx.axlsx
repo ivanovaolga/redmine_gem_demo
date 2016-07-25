@@ -1,0 +1,15 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: '1') do |sheet|
+  render 'releases', sheet: sheet, wb: wb
+end
+
+wb.add_worksheet(name: '2') do |sheet|
+  @releases.each do |release|
+    render 'systems', sheet: sheet, wb: wb, release: release
+  end
+end
+
+wb.add_worksheet(name: '3') do |sheet|
+  render 'stages', sheet: sheet, wb: wb
+end

@@ -1,0 +1,12 @@
+- if @issue.resource?
+  h4 = l(:availability)
+
+  - if @issue.system_knowledge.present?
+    - @issue.system_knowledge.each_with_index do |sk, i|
+      = system_knowledge_row(i, sk)
+  - else
+    = system_knowledge_row(0)
+
+  small = link_to l(:add_system), '#add_system', id: 'add-system'
+
+  .system-knowledge-bottom

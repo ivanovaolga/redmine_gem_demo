@@ -1,0 +1,38 @@
+# encoding: utf-8
+
+# resources
+  company_field:            '82'
+  resource_tracker:         '20'
+  internal_company:         'НРД'
+  resource_assigned_field:  '85'
+  system_field:             '3'
+
+# auto_estimations
+  e_analytics_field:          '14'
+  e_dev_field:                '15'
+  e_testing_field:            '16'
+  subtask_analytics_tracker:  '3'
+  subtask_dev_tracker:        '4'
+
+# release_tracker
+  release_tracker: '9'
+
+# rework_resources_report
+  resource_quantum_tracker: '21'
+  quantum_type_field:       '87'
+  quantum_type_holiday:     'Отсутствие'
+  resource_value:           '83'
+  category_analytics:       'Аналитик'
+  category_dev:             'Разработчик'
+  category_test:            'Тестировщик'
+
+# release calendar
+  release_closed_status:          '39'
+  release_test_start_field:       '54'
+  release_dev_start_field:        '53'
+  release_btest_start_field:      '57'
+
+# resource provision
+  rework_tracker:     '2'
+  quantum_type_work:  'Общая'
+  rdp_field:          90

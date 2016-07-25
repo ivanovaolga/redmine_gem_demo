@@ -1,0 +1,11 @@
+= title l(:competence_graphs)
+
+p
+  = form_tag competences_path, method: :get
+    = label_tag :system, "#{l(:label_system)}:"
+    = system_custom_field
+    = submit_tag l(:button_edit), name: nil
+
+- if @system
+  = render partial: 'list'
+  p = link_to l(:new_competence_value), new_competence_path(system: @system), class: 'icon icon-add'

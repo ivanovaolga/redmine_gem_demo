@@ -1,0 +1,67 @@
+fieldset
+  legend
+    = l(:rework_resources_report)
+  p
+    = label_tag 'settings[release_tracker]', l(:settings_release_tracker)
+    = select_tag 'settings[release_tracker]', options_for_select(tracker_options, @settings[:release_tracker])
+
+  p
+    = label_tag 'settings[resource_category_field]', l(:settings_resource_category_field)
+    = select_tag 'settings[resource_category_field]', options_for_select(custom_fields_options(:list), \
+      @settings[:resource_category_field])
+
+  p
+    = label_tag 'settings[resource_fio_field]', l(:settings_resource_fio_field)
+    = select_tag 'settings[resource_fio_field]', options_for_select(custom_fields_options(:user), \
+      @settings[:resource_fio_field])
+
+  p
+    = label_tag 'settings[date_admission_field]', l(:settings_date_admission_field)
+    = select_tag 'settings[date_admission_field]', options_for_select(custom_fields_options(:date), \
+      @settings[:date_admission_field])
+
+  p
+    = label_tag 'settings[date_dismissal_field]', l(:settings_date_dismissal_field)
+    = select_tag 'settings[date_dismissal_field]', options_for_select(custom_fields_options(:date), \
+      @settings[:date_dismissal_field])
+
+  p
+    = label_tag 'settings[rework_availability_field]', l(:settings_rework_availability_field)
+    = select_tag 'settings[rework_availability_field]', options_for_select(custom_fields_options(:int), \
+      @settings[:rework_availability_field])
+
+  p
+    = label_tag 'settings[resource_value]', l(:settings_resource_value)
+    = select_tag 'settings[resource_value]', options_for_select(custom_fields_options([:int, :float]), \
+      @settings[:resource_value])
+
+  p
+    = label_tag 'settings[release_start_field]', l(:settings_release_start_field)
+    = select_tag 'settings[release_start_field]', options_for_select(custom_fields_options(:date), \
+      @settings[:release_start_field])
+
+  p
+    = label_tag 'settings[resource_quantum_tracker]', l(:settings_resource_quantum_tracker)
+    = select_tag 'settings[resource_quantum_tracker]', options_for_select(tracker_options, \
+      @settings[:resource_quantum_tracker])
+
+  p
+    = hidden_field_tag 'settings[quantum_type_field]', @settings[:quantum_type_field]
+    = label_tag 'settings[quantum_type_holiday]', l(:settings_quantum_type_holiday)
+    = select_tag 'settings[quantum_type_holiday]', options_for_select(quantum_type_options, \
+      @settings[:quantum_type_holiday])
+
+  p
+    = label_tag 'settings[category_analytics]', l(:settings_category_analytics)
+    = select_tag 'settings[category_analytics]', options_for_select(category_options, \
+      @settings[:category_analytics])
+
+  p
+    = label_tag 'settings[category_dev]', l(:settings_category_dev)
+    = select_tag 'settings[category_dev]', options_for_select(category_options, \
+      @settings[:category_dev])
+
+  p
+    = label_tag 'settings[category_test]', l(:settings_category_test)
+    = select_tag 'settings[category_test]', options_for_select(category_options, \
+      @settings[:category_test])

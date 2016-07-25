@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+
+wb.styles do |s|
+  wb.add_worksheet(name: l(:release_calendar)) do |sheet|
+    render "sheet", sheet: sheet, report: @report, styles: s
+  end
+end

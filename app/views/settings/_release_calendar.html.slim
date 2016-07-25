@@ -1,0 +1,50 @@
+fieldset
+  legend
+    = l(:release_calendar)
+
+  p
+    = label_tag 'settings[work_days_analytics_field]', l(:settings_work_days_analytics_field)
+    = select_tag 'settings[work_days_analytics_field]', options_for_select(custom_fields_options(:int), \
+      @settings[:work_days_analytics_field])
+
+  p
+    = label_tag 'settings[work_days_dev_field]', l(:settings_work_days_dev_field)
+    = select_tag 'settings[work_days_dev_field]', options_for_select(custom_fields_options(:int), \
+      @settings[:work_days_dev_field])
+
+  p
+    = label_tag 'settings[work_days_test_field]', l(:settings_work_days_test_field)
+    = select_tag 'settings[work_days_test_field]', options_for_select(custom_fields_options(:int), \
+      @settings[:work_days_test_field])
+
+  p
+    = label_tag 'settings[work_days_btest_field]', l(:settings_work_days_btest_field)
+    = select_tag 'settings[work_days_btest_field]', options_for_select(custom_fields_options(:int), \
+      @settings[:work_days_btest_field])
+
+  p
+    = label_tag 'settings[release_analytics_start_field]', l(:settings_release_analytics_start_field)
+    = select_tag 'settings[release_analytics_start_field]', options_for_select(custom_fields_options(:date), \
+      @settings[:release_analytics_start_field])
+
+  p
+    = label_tag 'settings[release_dev_start_field]', l(:settings_release_dev_start_field)
+    = select_tag 'settings[release_dev_start_field]', options_for_select(custom_fields_options(:date), \
+      @settings[:release_dev_start_field])
+
+  p
+    = label_tag 'settings[release_test_start_field]', l(:settings_release_test_start_field)
+    = select_tag 'settings[release_test_start_field]', options_for_select(custom_fields_options(:date), \
+      @settings[:release_test_start_field])
+
+  p
+    = label_tag 'settings[release_btest_start_field]', l(:settings_release_btest_start_field)
+    = select_tag 'settings[release_btest_start_field]', options_for_select(custom_fields_options(:date), \
+      @settings[:release_btest_start_field])
+
+  p
+    = label_tag 'settings[release_closed_status]', l(:settings_release_closed_status)
+    = select_tag 'settings[release_closed_status]', options_for_select(status_options, \
+      @settings[:release_closed_status])
+
+

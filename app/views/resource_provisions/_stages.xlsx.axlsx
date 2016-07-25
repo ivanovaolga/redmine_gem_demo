@@ -1,0 +1,26 @@
+header_row = wb.styles.add_style(header_style)
+data_row = wb.styles.add_style(data_row_style)
+
+sheet.add_row([l(:report_composition_date), report_composition_date])
+
+sheet.add_row([])
+
+sheet.add_row([
+  l(:release_number), l(:release_stage), l(:release_system), l(:available_resource_min), l(:available_resource_max),
+  l(:required_resource), l(:resource_deficit)
+], style: header_row, widths: [:auto] + [15] * 6)
+
+@releases.each do |rls|
+  row = @stages_report.rows[rls.id]
+  next unless row
+
+  sheet.add_row([
+    rls.name,
+    row[:stage],
+    row[:system],
+    row[:available_min],
+    row[:available_max],
+    row[:required],
+    row[:deficit]
+  ], style: data_row)
+end

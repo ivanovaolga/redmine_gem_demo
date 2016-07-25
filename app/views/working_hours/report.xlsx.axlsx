@@ -1,0 +1,27 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: l(:export_report)) do |sheet|
+  add_header(sheet)
+
+  current_row = 2
+  @issues.each do |issue|
+    next if issue.custom_field_value(@settings[:risk_field]) != '1'
+
+    time_entries = work_efforts(issue)
+    time_entries.each do |e|
+      current_row += 1
+      add_row(sheet, issue, e.user, e.hours)
+    end
+
+    time_rows = time_entries.size #+ users.size
+    if time_rows > 1
+      start = current_row - time_rows + 1
+      sheet.merge_cells("A1:D1")
+      sheet.merge_cells("A#{start}:A#{current_row}")
+      sheet.merge_cells("B#{start}:B#{current_row}")
+      sheet.merge_cells("C#{start}:C#{current_row}")
+      sheet.merge_cells("D#{start}:D#{current_row}")
+      sheet.merge_cells("E#{start}:E#{current_row}")
+      sheet.merge_cells("F#{start}:F#{current_row}")
+    end
+  end
+end

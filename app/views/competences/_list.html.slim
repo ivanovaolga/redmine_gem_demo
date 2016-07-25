@@ -1,0 +1,14 @@
+table.list.competences-list
+  thead
+    tr
+      th = l(:label_month)
+      th = l(:label_competence)
+      th
+  tbody
+    - @competences.each do |c|
+      tr class==cycle('odd', 'even')
+        td = c.month
+        td = c.value
+        td.buttons
+          = link_to l(:button_edit), edit_competence_path(c), class: 'icon icon-edit'
+          = delete_link competence_path(c)

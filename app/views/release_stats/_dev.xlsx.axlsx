@@ -1,0 +1,22 @@
+header_row = styles.add_style(header_style)
+minor_header_row = styles.add_style(minor_header_style)
+data_row = styles.add_style(centered_cell_style.merge(black_border_style))
+num_cell = styles.add_style(centered_cell_style.merge(black_border_style).merge(format_code: "0.00"))
+
+sheet.add_row([l(:release_stats_report), nil])
+sheet.merge_cells("A1:B1")
+
+sheet.add_row([l(:release_stats_anlz)])
+anlz_rls = report.first_release_in_analitics(gen_date)
+sheet.add_row([l(:release_stats_rls_no), anlz_rls.subject])
+sheet.add_row([l(:release_stats_anlz_schedule), schedule_accomplishment(anlz_rls, :anlz, gen_date)], style: num_cell)
+
+sheet.add_row([l(:release_stats_dev)])
+dev_rls = report.last_release_in_status(gen_date, settings[:rls_stats_status_dev])
+sheet.add_row([l(:release_stats_rls_no), dev_rls.subject])
+sheet.add_row([l(:release_stats_dev_schedule), schedule_accomplishment(dev_rls, :dev, gen_date)], style: num_cell)
+
+sheet.add_row([l(:release_stats_test)])
+test_rls = report.last_release_in_status(gen_date, settings[:rls_stats_status_test])
+sheet.add_row([l(:release_stats_rls_no), test_rls.subject])
+sheet.add_row([l(:release_stats_test_schedule), schedule_accomplishment(test_rls, :test, gen_date)], style: num_cell)

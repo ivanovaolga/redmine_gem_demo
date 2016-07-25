@@ -1,0 +1,21 @@
+- html_title(l(:resource_provision_report))
+
+h2 = l(:resource_provision_report)
+
+- if flash[:error]
+  .alert.alert-danger
+    = flash[:error]
+
+= form_tag resource_reports_resource_provision_path, method: 'post', class: 'report-form multiple-submit' do
+  .box.tabular
+    p
+      = label_tag 'releases', "#{l(:field_releases)}:"
+      = select_tag 'releases', options_for_select(report_releases_options), multiple: true, size: 8
+
+    p
+      = label_tag 'rdp', "#{l(:field_rdp)}:"
+      = select_tag 'rdp', options_for_select(rdp_options), multiple: true, size: 6
+
+  p
+    = submit_tag l(:report_generate), class: 'report-form-button'
+    = submit_tag l(:button_reset), type: :reset

@@ -1,0 +1,6 @@
+- if @issue.resource?
+  - @issue.system_knowledge.each_slice(2) do |pair|
+    tr
+      - pair.each do |sk|
+        th = "#{l(:named_system_knowledge, sys: sk.system)}:"
+        td = "#{sk.value.to_s}%"

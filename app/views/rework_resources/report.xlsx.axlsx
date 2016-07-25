@@ -1,0 +1,46 @@
+wb = xlsx_package.workbook
+
+wb.styles do |s|
+  header_row = s.add_style(header_style)
+  sum_row = s.add_style(b: true, sz: 9)
+  row = s.add_style(sz: 9)
+
+  @report.rows.each_value do |release|
+    wb.add_worksheet(name: release[:name]) do |sheet|
+      sheet.add_row([
+        l(:field_fio), l(:field_category), l(:field_company), l(:familiarization), l(:availability), *report_systems,
+        l(:holiday_days_number), l(:working_days_number), l(:availability_man_hour), l(:availability_non_incident)
+      ], style: header_row)
+
+      release[:data].each_value do |category|
+        sum = {}
+
+        category.each do |resource|
+          values = [
+            resource[:familiarization],
+            resource[:availability],
+            *resource[:systems].values,
+            resource[:holidays],
+            resource[:work_days],
+            resource[:availability_mh],
+            resource[:availability_ni]
+          ]
+
+          sheet.add_row([
+            resource[:fio],
+            resource[:category],
+            resource[:company],
+            *values
+          ], style: row, widths: column_widths(resource[:systems]))
+
+          sum[resource[:company]] ||= []
+          sum[resource[:company]].push(values)
+        end
+
+        sum.each do |company, s|
+          sheet.add_row([l(:report_totals), '', company, *sum_columns(s)], style: sum_row)
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,7 @@
+= error_messages_for 'competence'
+.box.tabular
+  p
+    = f.text_field :system, disabled: true
+    = f.hidden_field :system
+  p = f.text_field :month, required: true
+  p = f.text_field :value, required: true

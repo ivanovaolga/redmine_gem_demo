@@ -1,0 +1,17 @@
+- html_title(l(:resource_reports))
+
+h2 = l(:resource_reports)
+
+ul.reports-list
+  - if User.current.allowed_to?(:performance_rate_report, nil, global: true)
+    li = link_to l(:resource_report_working_hours), new_resource_reports_working_hours_path
+  - if User.current.allowed_to?(:rework_resources_report, nil, global: true)
+    li = link_to l(:rework_resources_report), new_resource_reports_rework_resources_path
+  - if User.current.allowed_to?(:release_calendar_report, nil, global: true)
+    li = link_to l(:release_calendar_report), new_resource_reports_release_calendar_path
+  - if User.current.allowed_to?(:resource_provision_report, nil, global: true)
+    li = link_to l(:resource_provision_report), new_resource_reports_resource_provision_path
+  - if User.current.allowed_to?(:release_stats_report, nil, global: true)
+    li = link_to l(:release_stats_report), new_resource_reports_release_stats_path
+  - if User.current.allowed_to?(:forecast_perfomance_applications_report, nil, global: true)
+    li = link_to l(:forecast_perfomance_applications), new_resource_reports_forecast_perfomances_path

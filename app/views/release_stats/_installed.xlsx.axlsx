@@ -1,0 +1,21 @@
+header_row = styles.add_style(header_style)
+minor_header_row = styles.add_style(minor_header_style)
+data_row = styles.add_style(centered_cell_style.merge(black_border_style))
+num_cell = styles.add_style(centered_cell_style.merge(black_border_style).merge(format_code: "0.00"))
+
+sheet.add_row([l(:release_stats_report), nil])
+sheet.merge_cells("A1:B1")
+sheet.add_row([l(:release_stats_ins)])
+
+ins_rls = report.last_release_in_status(gen_date, settings[:rls_stats_status_installed])
+sheet.add_row([l(:release_stats_rls_no), ins_rls.subject])
+
+sheet.add_row([l(:release_stats_inc_capacity), incident_capacity(ins_rls)], style: num_cell)
+
+sheet.add_row([l(:release_stats_ins_latency), prom_latency(ins_rls)], style: num_cell)
+
+anlz_completion = @report.phase_completion_lvl(ins_rls, :anlz)
+sheet.add_row([l(:release_stats_anlz_latency), anlz_completion], style: num_cell)
+
+dev_completion = @report.phase_completion_lvl(ins_rls, :dev)
+sheet.add_row([l(:release_stats_dev_latency), dev_completion], style: num_cell)

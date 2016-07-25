@@ -1,0 +1,49 @@
+header_row = wb.styles.add_style(header_style)
+minor_header_row = wb.styles.add_style(minor_header_style)
+data_row = wb.styles.add_style(data_row_style)
+total_row = wb.styles.add_style(data_row_style.merge(b: true))
+
+sheet.add_row([release.name])
+
+header_row = sheet.add_row([
+  nil, l(:analyst_plural), nil, nil, nil, nil, l(:developer_plural), nil, nil, nil, nil, l(:tester_plural),
+  nil, nil, nil, nil
+], style: header_row)
+
+sheet.add_row([
+  l(:software_list), l(:availability_system_min), l(:availability_system_max), l(:availability_calculated),
+  l(:required_resource), l(:deficit), l(:availability_system_min), l(:availability_system_max),
+  l(:availability_calculated), l(:required_resource), l(:deficit), l(:availability_system_min),
+  l(:availability_system_max), l(:availability_calculated), l(:required_resource), l(:deficit)
+], style: minor_header_row)
+
+n = header_row.index + 1
+%W(B#{n}:F#{n} G#{n}:K#{n} L#{n}:P#{n}).each { |range| sheet.merge_cells(range) }
+
+@systems_report.rows[release.id].each do |system, row|
+  sheet.add_row([
+    system,
+    *[:an, :dev, :test].map { |t| [
+      row[t][:availability_min],
+      row[t][:availability_max],
+      '',
+      row[t][:required],
+      row[t][:deficit]
+    ] }.flatten
+  ], style: data_row)
+end
+
+total = @systems_report.total_row[release.id]
+sheet.add_row([
+  l(:total),
+  *[:an, :dev, :test].map { |t| [
+    total[t][:availability], '', total[t][:calc_availability], total[t][:required], total[t][:deficit]
+  ] }.flatten
+], style: total_row)
+
+n = sheet.rows.last.index + 1
+%W(B#{n}:C#{n} G#{n}:H#{n} L#{n}:M#{n}).each { |range| sheet.merge_cells(range) }
+
+sheet.column_widths(nil, *([12] * 15))
+
+sheet.add_row([])

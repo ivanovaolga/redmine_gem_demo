@@ -1,0 +1,16 @@
+- html_title(l(:release_calendar_report))
+
+h2 = l(:release_calendar_report)
+
+- if flash[:error]
+  .alert.alert-danger
+    = flash[:error]
+
+= form_tag resource_reports_release_calendar_path, method: 'post', class: 'report-form multiple-submit' do
+  .box.tabular
+    p
+      = label_tag 'releases', "#{l(:field_releases)}:"
+      = select_tag 'releases', options_for_select(report_releases_options), multiple: true, size: 8
+  p
+    = submit_tag l(:report_generate), class: 'report-form-button'
+    = submit_tag l(:button_reset), type: :reset

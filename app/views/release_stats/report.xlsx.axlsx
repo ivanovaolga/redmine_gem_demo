@@ -1,0 +1,10 @@
+wb = xlsx_package.workbook
+
+wb.styles do |s|
+  wb.add_worksheet(name: l(:release_stats_ins)) do |sheet|
+    render "installed", sheet: sheet, gen_date: @gen_date, styles: s, report: @report
+  end
+  wb.add_worksheet(name: l(:release_stats_dev)) do |sheet|
+    render "dev", sheet: sheet, gen_date: @gen_date, styles: s, report: @report
+  end
+end

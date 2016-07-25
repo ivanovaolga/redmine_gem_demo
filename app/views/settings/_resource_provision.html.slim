@@ -1,0 +1,15 @@
+fieldset
+  legend = l(:resource_provision_report)
+
+  p
+    = label_tag 'settings[rework_tracker]', l(:settings_rework_tracker)
+    = select_tag 'settings[rework_tracker]', options_for_select(tracker_options, @settings[:rework_tracker])
+
+  p
+    = label_tag 'settings[quantum_type_work]', l(:settings_quantum_type_work)
+    = select_tag 'settings[quantum_type_work]', \
+      options_for_select(quantum_type_options, @settings[:quantum_type_work]), multiple: true
+
+  p
+    = label_tag 'settings[rdp_field]', l(:settings_rdp_field)
+    = select_tag 'settings[rdp_field]', options_for_select(custom_fields_options(:list), @settings[:rdp_field])

@@ -1,0 +1,13 @@
+- html_title(l(:resource_report_working_hours))
+
+h2 = l(:resource_report_working_hours)
+
+- if flash[:error]
+  .alert.alert-danger
+    = flash[:error]
+
+= form_tag resource_reports_working_hours_path, method: 'post', class: 'report-form multiple-submit' do
+  = report_date_field('report_start_date')
+  = report_date_field('report_end_date')
+
+  = submit_tag l(:report_generate)

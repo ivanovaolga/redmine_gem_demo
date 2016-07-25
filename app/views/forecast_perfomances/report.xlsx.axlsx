@@ -1,0 +1,23 @@
+wb = xlsx_package.workbook
+
+wb.styles do |s|
+
+  wb.add_worksheet(name: l(:release_calendar)) do |sheet|
+    render 'release_calendars/sheet', sheet: sheet, report: @report.release_calendar, styles: s
+  end
+
+  wb.add_worksheet(name: l(:competence_sheet)) do |sheet|
+    render 'competence', sheet: sheet, rows: @report.competence, styles: s
+  end
+
+  wb.add_worksheet(name: '1') do |sheet|
+    render 'resource_provisions/releases', sheet: sheet, wb: wb
+  end
+
+  wb.add_worksheet(name: '2') do |sheet|
+    @releases.each do |release|
+      render 'resource_provisions/systems', sheet: sheet, wb: wb, release: release
+    end
+  end
+
+end

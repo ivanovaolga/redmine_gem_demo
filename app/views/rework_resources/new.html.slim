@@ -1,0 +1,22 @@
+- html_title(l(:rework_resources_report))
+
+h2 = l(:rework_resources_report)
+
+- if flash[:error]
+  .alert.alert-danger
+    = flash[:error]
+
+= form_tag resource_reports_rework_resources_path, method: 'post', class: 'report-form multiple-submit' do
+  .box.tabular
+    p
+      = label_tag 'releases', "#{l(:field_releases)}:"
+      = select_tag 'releases', options_for_select(report_releases_options), multiple: true, size: 8
+    p
+      = label_tag 'categories', "#{l(:field_resource_categories)}:"
+      = select_tag 'categories', options_for_select(report_categories_options), multiple: true
+    p
+      = label_tag 'companies', "#{l(:field_companies)}:"
+      = select_tag 'companies', options_for_select(report_companies_options), multiple: true, size: 8
+  p
+    = submit_tag l(:report_generate), class: 'report-form-button'
+    = submit_tag l(:button_reset), type: :reset

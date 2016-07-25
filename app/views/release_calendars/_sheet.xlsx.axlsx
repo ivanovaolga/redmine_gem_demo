@@ -1,0 +1,21 @@
+header_row = styles.add_style(header_style)
+minor_header_row = styles.add_style(minor_header_style)
+data_row = styles.add_style(centered_cell_style.merge(black_border_style))
+
+sheet.add_row([l(:release_calendar)], style: header_row)
+
+sheet.add_row([
+  l(:release_number), l(:analytics), '', l(:software_development), '', l(:testing), '', l(:beta_test), ''
+], style: header_row)
+sheet.rows[1].cells[0].style = minor_header_row
+
+sheet.add_row([
+  '', l(:period), l(:working_days_number), l(:period), l(:working_days_number), l(:period), l(:working_days_number),
+  l(:period), l(:working_days_number)
+], style: minor_header_row)
+
+%w(A1:I1 A2:A3 B2:C2 D2:E2 F2:G2 H2:I2).each { |range| sheet.merge_cells(range) }
+
+report.rows.each do |row|
+  sheet.add_row(row.to_worksheet_row, style: data_row)
+end

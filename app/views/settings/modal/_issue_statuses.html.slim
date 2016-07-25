@@ -1,0 +1,7 @@
+#statuses-modal.hidden
+  h3.title = l(:settings_select_statuses)
+
+  = issue_statuses_checkboxes
+
+  = submit_tag l(:settings_button_select), name: nil, onclick: 'selectEstimationStatuses(this)', class: 'statuses-modal-button'
+  = submit_tag l(:button_cancel), name: nil, onclick: 'hideModal(this)', class: 'statuses-modal-button'

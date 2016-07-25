@@ -1,0 +1,12 @@
+- html_title(l(:release_stats_report))
+
+h2 = l(:release_stats_report)
+
+- if flash[:error]
+  .alert.alert-danger
+    = flash[:error]
+
+= form_tag resource_reports_release_stats_path, method: 'post', class: 'report-form multiple-submit' do
+  = report_date_field('report_date')
+
+  = submit_tag l(:report_generate)
